@@ -143,3 +143,18 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 })(jQuery);
 $(".slide").hiSlide();
+// Get the pop-up screen and close button
+const popup = document.getElementById("popup");
+const closeBtn = document.getElementById("close-btn");
+
+// Show the pop-up screen when user reaches bottom of page
+window.addEventListener("scroll", () => {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    popup.style.display = "block";
+  }
+});
+
+// Hide the pop-up screen when user clicks close button
+closeBtn.addEventListener("click", () => {
+  popup.style.display = "none";
+});
